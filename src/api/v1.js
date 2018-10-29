@@ -14,12 +14,10 @@ let sendJSON = (data,response) => {
   response.end();
 };
 
-const notes = {};
-
 router.param('model', modelFinder);
 
 router.get('/api/v1/:model', (request,response,next) => {
-  notes.find()
+  request.model.find()
     .then( data => {
       const output = {
         count: data.length,
@@ -31,31 +29,31 @@ router.get('/api/v1/:model', (request,response,next) => {
 });
 
 router.get('/api/v1/:model/:id', (request,response,next) => {
-  notes.find({_id:request.params.id})
+  request.model.find({_id:request.params.id})
     .then( result => sendJSON(result, response) )
     .catch( next );
 });
 
 router.post('/api/v1/:model', (request,response,next) => {
-  notes.save(request.body)
+  request.model.save(request.body)
     .then( result => sendJSON(result, response) )
     .catch( next );
 });
 
 router.put('/api/v1/:model/:id', (request,response,next) => {
-  notes.put(request.params.id, request.body)  
+  request.model.put(request.params.id, request.body)  
     .then( result => sendJSON(result, response) )
     .catch( next );
 });
 
 router.patch('/api/v1/:model/:id', (request,response,next) => {
-  notes.patch(request.params.id, request.body)
+  request.model.patch(request.params.id, request.body)
     .then( result => sendJSON(result, response) )
     .catch( next );
 });
 
 router.delete('/api/v1/:model/:id', (request,response,next) => {
-  notes.delete(request.params.id)
+  request.model.delete(request.params.id)
     .then( result => sendJSON(result, response) )
     .catch( next );
 });

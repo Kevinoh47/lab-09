@@ -1,6 +1,9 @@
 ![CF](http://i.imgur.com/7v5ASc8.png) LAB - Dynamic API Routing
 =================================================
+## Passing Travis CI
+[![Build Status](https://travis-ci.com/Kevinoh47/lab-08.svg?branch=working08)](https://travis-ci.com/Kevinoh47/lab-08)
 
+Passes tests, but I the only routes that I can get to get run successfully from the console are the GET routes without IDs.
 
 ## Before you begin
 * You'll need to initialize this lab folder as a new node module, install your dependencies, setup your npm script commands, and pull in your config files

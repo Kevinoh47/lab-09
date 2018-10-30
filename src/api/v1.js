@@ -4,6 +4,8 @@ import express from 'express';
 
 import modelFinder from '../middleware/model-finder.js';
 
+import users from '../models/users.js';
+
 const router = express.Router();
 
 let sendJSON = (data,response) => {
@@ -35,18 +37,27 @@ router.get('/api/v1/:model/:id', (request,response,next) => {
 });
 
 router.post('/api/v1/:model', (request,response,next) => {
+  if (request.params.model==='users') {
+    users.validateUser(request.body) ;
+  } 
   request.model.save(request.body)
     .then( result => sendJSON(result, response) )
     .catch( next );
 });
 
 router.put('/api/v1/:model/:id', (request,response,next) => {
+  if (request.params.model==='users') {
+    users.validateUser(request.body);
+  } 
   request.model.put(request.params.id, request.body)  
     .then( result => sendJSON(result, response) )
     .catch( next );
 });
 
 router.patch('/api/v1/:model/:id', (request,response,next) => {
+  if (request.params.model==='users') {
+    users.validateUser(request.body);
+  }
   request.model.patch(request.params.id, request.body)
     .then( result => sendJSON(result, response) )
     .catch( next );

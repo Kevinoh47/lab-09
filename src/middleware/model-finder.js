@@ -12,6 +12,6 @@ export default (req, res, next) => {
     next();
   }
   else {
-    next('Invalid model.');
+    next('Invalid Model');
   }
 };

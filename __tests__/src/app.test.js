@@ -4,6 +4,11 @@ const {server} = require('../../src/app.js');
 const supertest = require('supertest');
 const mockRequest = supertest(server);
 
+
+jest.mock('require-dir');
+
+
+
 describe('api server', () => {
 
   it('should respond with a 404 on an invalid route', () => {
@@ -32,11 +37,12 @@ describe('api server', () => {
 
   });
 
-  it('should respond properly on a GET request to /api/v1/notes', () => {
+  it('should respond properly on a GET request to /api/v1/tasks', () => {
 
     return mockRequest
-      .get('/api/v1/notes')
+      .get('/api/v1/tasks')
       .then(results => {
+        //onsole.log('RESULTS!!', results);
         expect(results.status).toBe(200);
       })
       .catch(err => {
@@ -105,6 +111,8 @@ describe('api server', () => {
   });
 
   /**!!!!!!!!!!!!!!!!! users !!!!!!!!!!!!!!!!! */
+
+  
   it('should respond properly on a GET request to /api/v1/users', () => {
 
     return mockRequest
@@ -253,3 +261,4 @@ describe('api server', () => {
       });
   });
 });
+

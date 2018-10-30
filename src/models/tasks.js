@@ -10,12 +10,10 @@ class Tasks {
   }
 
   static find(query) {
-    console.log('TASKS - FIND');
     return storage.find(query);
   }
 
   static save(data) {
-    console.log('notes SAVE method, DATA: ', data);
     return storage.save(data);
   }
 

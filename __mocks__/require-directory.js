@@ -14,7 +14,15 @@ const mockModel = {
   },
 };
 
-export default (dir) => {
+// export default (dir) => {
+//   if ( typeof dir !== 'string' ) { return {}; }
+//   return {
+//     'foo': mockModel,
+//   };
+// };
+
+// TODO taken from Lab 13
+export default (module, dir, options) => {
   if ( typeof dir !== 'string' ) { return {}; }
   return {
     'foo': mockModel,

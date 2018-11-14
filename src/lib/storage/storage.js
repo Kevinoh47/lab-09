@@ -7,7 +7,6 @@ let dataStorageModule = {};
 
 switch(process.env.STORAGE) {
 case 'filesystem': 
-  console.log('STORAGE - FILESYSTEM');
   dataStorageModule = fileStorage;
   break;
 default: 

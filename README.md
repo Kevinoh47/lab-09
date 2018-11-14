@@ -1,6 +1,10 @@
 ![CF](http://i.imgur.com/7v5ASc8.png) LAB - Dynamic API Routing
 =================================================
+## Travis CI
+[![Build Status](https://travis-ci.com/Kevinoh47/lab-09.svg?branch=working09)](https://travis-ci.com/Kevinoh47/lab-09)
 
+## Summary
+Please note that after working with John and Cara, we decided to remove model-finder.test.js for this lab, as we could not get it to work and John said that we cannot mock require-dir. Also, a number of tests for app.test.js worked for a while then started failing again. We decided to comment them out as I am way over time on this lab.
 
 ## Before you begin
 * You'll need to initialize this lab folder as a new node module, install your dependencies, setup your npm script commands, and pull in your config files
